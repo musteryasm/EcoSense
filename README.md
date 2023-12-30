@@ -1,4 +1,4 @@
-# Environmental Monitoring and Recommendation System
+# EcoSense - Built at HERE Hackathon - IIT Bombay Techfest
 
 ## Overview
 This project provides a comprehensive environmental monitoring and recommendation system, leveraging real-time weather and air quality data through APIs. Key features include time series forecasts, tailored health recommendations, and interactive maps for visualizing environmental layers.
