@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+  <title>Real-time Location on Map</title>
+  <link rel="stylesheet" type="text/css" href="https://js.api.here.com/v3/3.1/mapsjs-ui.css" />
+  <link rel="stylesheet" type="text/css" href="demo.css" />
+  <link rel="stylesheet" type="text/css" href="styles.css" />
+  <link rel="stylesheet" type="text/css" href="../template.css" />
+  <script type="text/javascript" src='../test-credentials.js'></script>
+  <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-core.js"></script>
+  <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-service.js"></script>
+  <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-ui.js"></script>
+  <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"></script>
+  <style>
+    /* ... (your existing styles) */
+  </style>
+</head>
+<body id="markers-on-the-map">
+  <nav id="myHeader">
+    <!-- ... (your existing navigation bar) -->
+  </nav>
+  <div id="map-container">
+    <div id="map"></div>
+  </div>
+  <div id="aqi-container">
+    <iframe src="aqi.html" frameborder="0"></iframe>
+  </div>
+  <script type="text/javascript" src='demo.js'></script>
+  <script>
+    const platform = new H.service.Platform({
+      apikey: "YOUR_API_KEY",
+    });
+
+    const defaultLayers = platform.createDefaultLayers();
+
+    const map = new H.Map(
+      document.getElementById("map"),
+      defaultLayers.vector.normal.map,
+      {
+        zoom: 14,
+        center: {
+          lat: 19.1176,
+          lng: 72.9060,
+        },
+      }
+    );
+
+    const behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
+
+    window.addEventListener("resize", () => map.getViewPort().resize());
+
+    const ui = H.ui.UI.createDefault(map, defaultLayers);
+
+    // Event listener for GPS icon click
+    document.getElementById("gps-icon").addEventListener("click", () => {
+      // Get the current location using the Geolocation API
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          (position) => {
+            const { latitude, longitude } = position.coords;
+
+            // Center the map to the obtained location
+            map.setCenter({ lat: latitude, lng: longitude });
+
+            // Create a container for the custom marker
+            const markerContainer = document.createElement('div');
+            markerContainer.className = 'custom-marker';
+
+            // Add coordinates text to the marker container
+            const coordinatesText = document.createElement('div');
+            coordinatesText.textContent = `${latitude.toFixed(4)}, ${longitude.toFixed(4)}`;
+            markerContainer.appendChild(coordinatesText);
+
+            // Create a custom marker at the obtained location
+            const customMarker = new H.map.DomMarker({ lat: latitude, lng: longitude }, { icon: new H.map.DomIcon(markerContainer) });
+
+            // Remove existing markers before adding a new one
+            map.removeObjects(map.getObjects());
+
+            // Add marker to the map
+            map.addObject(customMarker);
+          },
+          (error) => {
+            console.error("Error getting location:", error.message);
+          }
+        );
+      } else {
+        console.error("Geolocation is not supported by this browser.");
+      }
+    });
+
+    // Event listener for map click
+    map.addEventListener('tap', (event) => {
+      // Get the clicked geographical coordinates
+      const coord = map.screenToGeo(event.currentPointer.viewportX, event.currentPointer.viewportY);
+
+      // Create a container for the custom marker
+      const markerContainer = document.createElement('div');
+      markerContainer.className = 'custom-marker';
+
+      // Add coordinates text to the marker container
+      const coordinatesText = document.createElement('div');
+      coordinatesText.textContent = `${coord.lat.toFixed(4)}, ${coord.lng.toFixed(4)}`;
+      markerContainer.appendChild(coordinatesText);
+
+      // Create a custom marker at the clicked location
+      const customMarker = new H.map.DomMarker(coord, { icon: new H.map.DomIcon(markerContainer) });
+
+      // Remove existing markers before adding a new one
+      map.removeObjects(map.getObjects());
+
+      // Add marker to the map
+      map.addObject(customMarker);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Boxicons -->
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	<!-- My CSS -->
+	<link rel="stylesheet" href="style.css">
+
+	<title>EcoSense</title>
+</head>
+
+<body>
+
+
+	<!-- SIDEBAR -->
+	<section id="sidebar">
+		<a href="#" class="brand">
+			<i class='bx bxs-app'></i>
+			<h1 class="text">EcoSense</h1>
+		</a>
+		<ul class="side-menu top">
+			<li class="active">
+				<a href="./index.html">
+					<i class='bx bxs-dashboard'></i>
+					<span class="text">Dashboard</span>
+				</a>
+			</li>
+			<li>
+				<a href="./new.html">
+					<i class='bx bx-map'></i>
+					<span class="text">Maps</span>
+				</a>
+			</li>
+			<li>
+				<a href="./leaflet-openweathermap/leaflet-openweathermap/example/sidebar.html">
+					<i class='bx bxs-map-alt'></i>
+					<span class="text">Filters</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<i class='bx bxs-group'></i>
+					<span class="text">Team</span>
+				</a>
+			</li>
+		</ul>
+		<ul class="side-menu">
+			<li>
+				<a href="./project-management-dashboard/index.html">
+					<i class='bx bxs-cog'></i>
+					<span class="text">Recommendations</span>
+				</a>
+			</li>
+			<!-- <li>
+				<a href="#" class="logout">
+					<i class='bx bxs-log-out-circle' ></i>
+					<span class="text">Logout</span>
+				</a>
+			</li> -->
+		</ul>
+	</section>
+
+
+
+	<div class="Dashboard">
+		<!-- CONTENT -->
+		<section id="content">
+			<!-- NAVBAR -->
+			<nav>
+				<i class='bx bx-menu'></i>
+				<a href="#" class="nav-link">Categories</a>
+				<form id="searchForm" action="#">
+					<div class="form-input">
+						<input id="cityInput" type="search" placeholder="Search...">
+						<button type="submit" class="search-btn"><i class='bx bx-search'></i></button>
+					</div>
+				</form>
+				<input type="checkbox" id="switch-mode" hidden>
+				<label for="switch-mode" class="switch-mode"></label>
+				<!-- <a href="#" class="notification">
+				<i class='bx bxs-bell' ></i>
+				<span class="num">8</span>
+			</a>
+			<a href="#" class="profile">
+				<img src="img/people.png">
+			</a> -->
+			</nav>
+
+
+			<!-- MAIN -->
+			<main>
+				<div class="head-title">
+					<div class="left">
+						<h1>Dashboard</h1>
+						<ul class="breadcrumb">
+							<li>
+								<a href="#">Dashboard</a>
+							</li>
+							<li><i class='bx bx-chevron-right'></i></li>
+							<li>
+								<a class="active" href="#">Home</a>
+							</li>
+						</ul>
+					</div>
+					<a href="#" class="btn-download">
+						<i class='bx bxs-cloud-download'></i>
+						<span class="text">Download PDF</span>
+					</a>
+				</div>
+
+				<ul class="box-info">
+					<li>
+						<i class='bx bxs-calendar-check'></i>
+						<span class="text">
+							<h3 id="locationInfo">Loading...</h3>
+							<p>Location</p>
+						</span>
+					</li>
+					<li>
+						<i class='bx bxs-group'></i>
+						<span class="text">
+							<h3 id="coordinatesInfo">Loading...</h3>
+							<p>Coordinates</p>
+						</span>
+					</li>
+					<li>
+						<i class='bx bxs-dollar-circle'></i>
+						<span class="text">
+							<h3 id="dateTimeInfo">Loading...</h3>
+							<p>Date/Time</p>
+						</span>
+					</li>
+					<li>
+						<i class='bx bxs-calendar-check'></i>
+						<span class="text">
+							<h3 id="aqiInfo">Loading...</h3>
+							<p>AQI</p>
+						</span>
+					</li>
+				</ul>
+
+
+
+				<div id="weatherContainer"></div>
+
+				<div class="table-data">
+					<div class="order">
+						<div class="head">
+							<h3>Air Quality Pollutants</h3>
+							<i class='bx bx-search'></i>
+							<i class='bx bx-filter'></i>
+						</div>
+						<table>
+							<thead>
+								<tr>
+									<th>Icon</th>
+									<th>Short Name</th>
+									<th>Full Name</th>
+									<th>Value</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										<img src="img/people.png">
+									</td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>
+										<img src="img/people.png">
+									</td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>
+										<img src="img/people.png">
+									</td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>
+										<img src="img/people.png">
+									</td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>
+										<img src="img/people.png">
+									</td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="todo">
+						<div class="head">
+							<h3>Air Quality Solutions</h3>
+						</div>
+						<ul class="todo-list">
+							<li class="not-completed">
+								<p><a href="link-to-air-quality-monitor"><i class='bx bx-bar-chart-alt'></i></a> Air
+									Quality Monitor</p>
+							</li>
+							<li class="completed">
+								<p><a href="link-to-air-quality-sensor"><i class='bx bx-wind'></i></a> Air Quality
+									Sensor</p>
+							</li>
+							<li class="not-completed">
+								<p><a href="link-to-air-purifier"><i class='bx bx-filter'></i></a> Air Purifier</p>
+							</li>
+							<li class="completed">
+								<p><a href="link-to-car-cabin-filter"><i class='bx bxs-car-wash'></i></a> Car Cabin
+									Filter</p>
+							</li>
+							<li class="not-completed">
+								<p><a href="link-to-n95-pollution-mask"><i class='bx bxs-face-mask'></i></a> N95
+									Pollution Mask</p>
+							</li>
+						</ul>
+
+
+					</div>
+
+					<div class="todo">
+						<div class="head">
+							<h3>Health Recommendations</h3>
+						</div>
+						<ul class="todo-list">
+							<li class="completed">
+								<p>All</p>
+								<i class='bx bx-dots-vertical-rounded'></i>
+								<div id="info4All" class="info-popup">Additional information for All</div>
+							</li>
+							<li class="completed">
+								<p>CardioVascular</p>
+								<i class='bx bx-dots-vertical-rounded'></i>
+								<div id="info4Cardo" class="info-popup">Additional information for All</div>
+							</li>
+							<li class="not-completed">
+								<p>Elderly</p>
+								<i class='bx bx-dots-vertical-rounded'></i>
+								<div id="info4Elder" class="info-popup">Additional information for All</div>
+							</li>
+							<li class="completed">
+								<p>Family</p>
+								<i class='bx bx-dots-vertical-rounded'></i>
+								<div id="info4Family" class="info-popup">Additional information for All</div>
+							</li>
+							<li class="not-completed">
+								<p>Pregnancy</p>
+								<i class='bx bx-dots-vertical-rounded'></i>
+								<div id="info4Preg" class="info-popup">Additional information for All</div>
+							</li>
+							<li class="not-completed">
+								<p>Sport</p>
+								<i class='bx bx-dots-vertical-rounded'></i>
+								<div id="info4Sport" class="info-popup">Additional information for All</div>
+							</li>
+						</ul>
+
+
+					</div>
+
+
+
+
+
+				</div>
+	</div>
+
+	</main>
+	<!-- MAIN -->
+	</section>
+	<!-- CONTENT -->
+
+
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			const downloadBtn = document.querySelector('.btn-download');
+
+			downloadBtn.addEventListener('click', function () {
+				// Trigger the print operation
+				window.print();
+			});
+		});
+	</script>
+	<script src="script.js"></script>
+	<script>
+		// Predefined latitude and longitude
+		let defaultCity = 'Mumbai'
+		let defaultLatitude = 19.118865;
+		let defaultLongitude = 72.91135;
+
+
+		
+		function createWeatherCards(data) {
+			const weatherContainer = document.getElementById('weatherContainer');
+
+			// Check if the required data exists
+			if (!data || !data.daily || !data.daily.time) {
+				console.error('Invalid or missing data');
+				return;
+			}
+
+			// Iterate through the weather data for each day
+			data.daily.time.forEach((day, index) => {
+				const weatherCard = document.createElement('div');
+				weatherCard.classList.add('weather-card');
+
+				// Create weather card elements
+				const temperatureHeading = document.createElement('h1');
+				temperatureHeading.classList.add('temperature-heading');
+				temperatureHeading.textContent = `${data.daily.temperature_2m_max[index]}°C`;
+
+				const header = document.createElement('div');
+				header.classList.add('header');
+				header.innerHTML = `
+				<p>${new Date(day).toDateString()}</p>
+				`;
+
+				const weatherDetails = document.createElement('div');
+				weatherDetails.classList.add('weather-details');
+				weatherDetails.innerHTML = `
+				<img src="weather.png" alt="Weather Icon">
+				<p class="temperature">Temperature: ${data.daily.temperature_2m_max[index]}°C</p>
+				`;
+
+				const additionalInfo = document.createElement('div');
+				additionalInfo.classList.add('additional-info');
+				additionalInfo.innerHTML = `
+				<p>Sunrise: ${new Date(data.daily.sunrise[index]).toLocaleTimeString()}</p>
+				<p>Sunset: ${new Date(data.daily.sunset[index]).toLocaleTimeString()}</p>
+				<p>Humidity: ${data.daily.uv_index_max[index]}%</p>
+				<p>Wind Speed: ${data.daily.wind_speed_10m_max[index]} km/h</p>
+				`;
+
+				weatherCard.appendChild(temperatureHeading);
+				weatherCard.appendChild(header);
+				weatherCard.appendChild(weatherDetails);
+				weatherCard.appendChild(additionalInfo);
+
+				weatherContainer.appendChild(weatherCard);
+			});
+		}
+
+		function getWeather(latitude, longitude){
+			console.log("HELLOOOOOOOO")
+			// Replace with your API URL
+			const apiUrl = `https://environment-api.onrender.com/get_seven_days_weather?lat=${latitude}&lng=${longitude}`;
+			// Fetch weather data
+			fetch(apiUrl)
+				.then(response => {
+					if (!response.ok) {
+						throw new Error('Network response was not ok.');
+					}
+					return response.json();
+				})
+				.then(data => {
+					// Call the function to generate weather cards
+					console.log(data)
+					createWeatherCards(data);
+				})
+				.catch(error => {
+					console.error('Error fetching weather data:', error);
+				});
+		}
+
+
+
+		// Function to update information
+		function updateInformation(city, latitude, longitude) {
+			const apiUrl = `https://environment-api.onrender.com/get_current_air_data?lat=${latitude}&lng=${longitude}`;
+			fetch(apiUrl)
+				.then(response => {
+					if (!response.ok) {
+						throw new Error('Network response was not ok.');
+					}
+					return response.json();
+				})
+				.then(data => {
+					// Update the relevant information in the HTML
+					document.getElementById('locationInfo').textContent = `${city}`; // Replace with the received location info
+					document.getElementById('coordinatesInfo').textContent = `${latitude}, ${longitude}`;
+					document.getElementById('dateTimeInfo').textContent = data.datetime; // Use the received date/time from the API
+					document.getElementById('aqiInfo').textContent = data.index.value.toFixed(0); // Use the AQI value from the API
+					document.getElementById('info4All').textContent = data.health_recommendations.all
+					document.getElementById('info4Cardo').textContent = data.health_recommendations.cardiovascular
+					document.getElementById('info4Elder').textContent = data.health_recommendations.elderly
+					document.getElementById('info4Family').textContent = data.health_recommendations.family
+					document.getElementById('info4Preg').textContent = data.health_recommendations.pregnancy
+					document.getElementById('info4Sport').textContent = data.health_recommendations.sport
+					document.querySelector("table tbody tr:nth-child(1) td:nth-child(2)").textContent = data.pollutants.pm25.shortcode;
+					document.querySelector("table tbody tr:nth-child(1) td:nth-child(3)").textContent = data.pollutants.pm25.name;
+					document.querySelector("table tbody tr:nth-child(1) td:nth-child(4)").textContent = data.pollutants.pm25.value + ' ' + data.pollutants.pm25.unit;
+
+					document.querySelector("table tbody tr:nth-child(2) td:nth-child(2)").textContent = data.pollutants.co.shortcode;
+					document.querySelector("table tbody tr:nth-child(2) td:nth-child(3)").textContent = data.pollutants.co.name;
+					document.querySelector("table tbody tr:nth-child(2) td:nth-child(4)").textContent = data.pollutants.co.value + ' ' + data.pollutants.co.unit;
+
+					document.querySelector("table tbody tr:nth-child(3) td:nth-child(2)").textContent = data.pollutants.pm10.shortcode;
+					document.querySelector("table tbody tr:nth-child(3) td:nth-child(3)").textContent = data.pollutants.pm10.name;
+					document.querySelector("table tbody tr:nth-child(3) td:nth-child(4)").textContent = data.pollutants.pm10.value + ' ' + data.pollutants.pm10.unit;
+
+					document.querySelector("table tbody tr:nth-child(4) td:nth-child(2)").textContent = data.pollutants.o3.shortcode;
+					document.querySelector("table tbody tr:nth-child(4) td:nth-child(3)").textContent = data.pollutants.o3.name;
+					document.querySelector("table tbody tr:nth-child(4) td:nth-child(4)").textContent = data.pollutants.o3.value + ' ' + data.pollutants.o3.unit;
+
+					document.querySelector("table tbody tr:nth-child(5) td:nth-child(2)").textContent = data.pollutants.no2.shortcode;
+					document.querySelector("table tbody tr:nth-child(5) td:nth-child(3)").textContent = data.pollutants.no2.name;
+					document.querySelector("table tbody tr:nth-child(5) td:nth-child(4)").textContent = data.pollutants.no2.value + ' ' + data.pollutants.no2.unit;
+					console.log("getWeather")
+					getWeather(latitude, longitude)
+				})
+				.catch(error => {
+					console.error('Error fetching data:', error);
+				});
+				
+		}
+	
+
+		// Initial fetch with predefined values
+		updateInformation(defaultCity, defaultLatitude, defaultLongitude);
+		
+
+		// Event listener for the search form
+		document.getElementById('searchForm').addEventListener('submit', function (event) {
+			event.preventDefault(); // Prevent form submission
+			const city = document.getElementById('cityInput').value.trim(); // Get the entered city
+
+			if (city !== '') {
+				const apiKey = '658cd74d51799334852690soz37327b';
+				const geocodeUrl = `https://geocode.maps.co/search?q=${city}&api_key=${apiKey}`;
+
+				fetch(geocodeUrl)
+					.then(response => {
+						if (!response.ok) {
+							throw new Error('Network response was not ok.');
+						}
+						return response.json();
+					})
+					.then(data => {
+						// Extract latitude and longitude from the first object in the response
+						const firstLocation = data[0];
+						const newLatitude = parseFloat(firstLocation.lat);
+						const newLongitude = parseFloat(firstLocation.lon);
+						console.log(newLatitude, newLongitude)
+
+						// Update information with the new latitude and longitude
+						updateInformation(city, newLatitude, newLongitude);
+					})
+					.catch(error => {
+						console.error('Error fetching geocode data:', error);
+					});
+			}
+		});
+	</script>
+</body>
+
+</html>

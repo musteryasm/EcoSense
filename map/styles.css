@@ -1,0 +1,88 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f2f2f2;
+  }
+  
+  .card {
+    background-color: rgb(203, 233, 323);
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 500px;
+
+  }
+  
+  h1 {
+    margin: 0;
+    color: #333;
+  }
+  
+  .aqi-info {
+    margin-bottom: 20px;
+  }
+  
+  .temperature {
+    font-weight: bold;
+    font-size: 18px;
+  }
+  
+  .aqi-circle {
+    border-radius: 50%;
+    background-color: #fdd835;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .aqi-value {
+    font-size: 24px;
+    margin: 0;
+  }
+  
+  .aqi-rating {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .rectangle {
+    background-color: #eee;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: left;
+    margin-bottom: 20px;
+  }
+  
+  .aqi-details {
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .bottom-icons {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .circle {
+    border-radius: 50%;
+    background-color: #ccc;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  

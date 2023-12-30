@@ -1,0 +1,94 @@
+body {
+    font-family: "Nunito Sans", sans-serif;
+    background-color: #fff;
+    margin: 0;
+  }
+  
+  .temperature {
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .temp_title {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 15px;
+  }
+  
+  .temp_title a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .temp_title li {
+    display: inline-block;
+    margin-right: 5px;
+  }
+  
+  .temp_box,
+  .temp_box1 {
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+  }
+  
+  .te_title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .te_subtitle {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .weather_1,
+  .sensors_value1 {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  
+  .sensors_value1 {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 8px;
+  }
+  
+  .sensor-dot {
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 2px;
+  }
+  
+  .s-bar-graph {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+  }
+  
+  .chartjs-render-monitor,
+  .s-bar-graph1 {
+    margin-top: 15px;
+  }
+  
+  .s-bar-graph1 p {
+    margin-bottom: 5px;
+  }
+  
+  .text-center {
+    text-align: center;
+    color: white;
+    font-size: 12px;
+    padding-top: 10px;
+  }
+  
+  /* Add more CSS styles as needed */
+  

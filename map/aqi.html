@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Weather Information</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="card">
+    <h1>Weather Information</h1>
+    
+    <!-- AQI Information Section -->
+    <div class="aqi-info">
+      <p class="city">City: Chicago, Illinois, United States</p>
+      <p class="location">Coordinates: 41.83° N, -87.68° E</p>
+      <p class="temperature">Temperature: 12.00°C</p>
+    </div>
+    <div class="aqi-circle">
+      <p class="aqi-value">119</p>
+      <p class="aqi-rating">Moderate</p>
+    </div>
+    <div class="rectangle">
+      <p class="aqi-details">AQI Details:</p>
+      <p>AQI US: 119 (P2)</p>
+      <p>AQI CN: 60 (P2)</p>
+    </div>
+    <div class="bottom-icons">
+      <div class="circle">Wind Speed</div>
+      <div class="circle">UV Index</div>
+      <div class="circle">Atmospheric Pressure</div>
+    </div>
+
+    <!-- Weather Forecast Section -->
+    <div class="forecast">
+      <h2>Weather Forecast</h2>
+      <div class="forecast-item">
+        <div class="weather-icon">
+          <img src="https://weather.api.here.com/static/weather/icon/27.png" alt="Weather Icon">
+        </div>
+        <div class="description">
+          <p class="sky-description">Overcast</p>
+          <p class="temperature-desc">Cool</p>
+        </div>
+        <p class="high-low-temperature">High: 12.00°C, Low: 7.80°C</p>
+        <p class="humidity">Humidity: 94%</p>
+        <p class="wind">Wind: 18.26 km/h, South</p>
+        <p class="uv-index">UV Index: 0 (Minimal)</p>
+      </div>
+      <!-- Add more forecast items as needed -->
+    </div>
+  </div>
+</body>
+</html>
